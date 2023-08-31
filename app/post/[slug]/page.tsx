@@ -1,5 +1,8 @@
 import { Post } from "@/app/lib/interface"
 import { client } from "@/app/lib/sanity"
+import { urlFor } from "@/app/lib/sanityImageUrl"
+import { PortableText } from "@portabletext/react"
+import Image from 'next/image'
 
 const getData = async (slug : string) => {
     const query = `*[_type == "post" && slug.current == "${slug}"][0]`
@@ -15,9 +18,17 @@ const SlugPage = async ({
     params: { slug: string }
 }) => {
     const data = await getData(params.slug) as Post
-    console.log( 'data: ', data._createdAt)
+
+    const PortableTextComponent = {
+        types: {
+            image: ({value} : {value: any}) => (
+                <Image src={urlFor(value).url()} alt="Image" className="rounded-lg" width={800} height={800}/>
+            )
+        }
+    }
+
     return (
-        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
             <header className="pt-6 xl:pb-6">
                 <div className="space-y-1 text-center">
                     <div className="space-y-10">
@@ -37,7 +48,12 @@ const SlugPage = async ({
             </header>
 
             <div className="divide-y divide-gray-200 pb-7 divide-gray-700 xl:divide-y-0">
-                <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:"></div>
+                <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
+                    <div className="prose max-w-none pb-8 pt-10 dark:prose-invert prose-lg">
+                         
+                         <PortableText value={data.content} components={{}} /> 
+                    </div>
+                </div>
             </div>
         </div>
     )
