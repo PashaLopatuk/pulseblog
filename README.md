@@ -15,4 +15,4 @@ At PulseBlog, we're more than a blog – we're a community driven by curiosity a
 
 Connect with us on social media and become part of our vibrant discussions. Together, we'll amplify the beat of creativity, passion, and innovation. Welcome to the heart of PulseBlog!
 
-**Let's Connect:**
+**Let's Connect**
