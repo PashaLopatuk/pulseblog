@@ -3,6 +3,7 @@ import { client } from "@/app/lib/sanity"
 import { urlFor } from "@/app/lib/sanityImageUrl"
 import { PortableText } from "@portabletext/react"
 import Image from 'next/image'
+import type { Metadata } from 'next'
 
 const getData = async (slug : string) => {
     const query = `*[_type == "post" && slug.current == "${slug}"][0]`
@@ -10,6 +11,11 @@ const getData = async (slug : string) => {
     const data = await client.fetch(query)
 
     return data
+}
+
+export const metadata: Metadata = {
+    title: 'PulseBlog',
+    description: 'Immerse yourself in a world of discoveries',
 }
 
 const SlugPage = async ({
@@ -51,7 +57,7 @@ const SlugPage = async ({
                 <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
                     <div className="prose max-w-none pb-8 pt-10 dark:prose-invert prose-lg">
                          
-                         <PortableText value={data.content} components={{}} /> 
+                         <PortableText value={data.content} components={PortableTextComponent} /> 
                     </div>
                 </div>
             </div>

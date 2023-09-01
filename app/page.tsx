@@ -2,13 +2,19 @@ import Link from "next/link"
 import { Post } from "./lib/interface"
 import { client } from "./lib/sanity"
 
+
 async function getData() {
   const query = '*[_type == "post"]'
 
   const data = await client.fetch(query)
 
+  data.map( (e) => {
+    console.log(e.title)
+  })
+
   return data
 }
+
 
 export default async function IndexPage() {
   const data = await getData() as Post[]

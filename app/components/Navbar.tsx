@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import ThemeButton from './ThemeButton';
+import HeaderNavigation from './HeaderNavigation';
+import BurgerMenu from './BurgerMenu';
 
 const Navbar = () => {
     return (
@@ -8,7 +10,7 @@ const Navbar = () => {
         ">
             <div className="flex justify-between h-16">
                 <div className="flex justify-between items-center w-full">
-                    <Link href="">
+                    <Link href="/">
                         <h1 className="text-2xl font-medium">
                             Pulse<span className='text-lime-500 font-semibold'>
                                 Blog
@@ -16,7 +18,14 @@ const Navbar = () => {
                         </h1>
                     </Link>
 
+                    <div className="hidden sm:block">
+                        <HeaderNavigation />
+                    </div>
+
                     <ThemeButton /> 
+
+                    <BurgerMenu />
+
                 </div>
             </div>
         </div>
