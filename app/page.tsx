@@ -8,7 +8,7 @@ async function getData() {
 
   const data = await client.fetch(query)
 
-  data.map( (e) => {
+  data.map( (e: {title: string}) => {
     console.log(e.title)
   })
 
@@ -28,7 +28,8 @@ export default async function IndexPage() {
       </div>
 
       <ul className="">
-        {data.map( (post) => (
+        {
+        data.map( (post) => (
           <li className="" key={post._id}>
             <article className="space-y-2 xl:grid-cols-4 xl:items-baseline xl:space-y-0">
               <div className="">
@@ -50,7 +51,8 @@ export default async function IndexPage() {
               </Link>
             </article>
           </li>
-        ))}
+        ))
+        }
       </ul>
     </div>
   )

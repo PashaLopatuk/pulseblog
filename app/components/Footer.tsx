@@ -7,18 +7,18 @@ const Footer = () => {
           <div className="flex flex-col items-center md:flex-row md:justify-between">
             <div className="mb-6 md:w-1/2 md:mb-0">
               <h3 className="text-xl font-semibold mb-2">Email</h3>
-              <p className="text-lime-500 dark:text-lime-500">youremail@example.com</p>
+              <a className="text-lime-500 dark:text-lime-500" href='mailto:pashalopatuk@gmail.com'>pashalopatuk@gmail.com</a>
             </div>
             <div className="md:w-1/2">
               <h3 className="text-xl font-semibold mb-2">Social Media</h3>
               <ul>
                 <li className="mb-2">
-                  <a href="https://twitter.com/yourtwitter" target="_blank" rel="noopener noreferrer" className="text-lime-500 dark:text-lime-500 hover:underline">
-                    Twitter
+                  <a href="https://www.instagram.com/pashajef/" target="_blank" rel="noopener noreferrer" className="text-lime-500 dark:text-lime-500 hover:underline">
+                    Instagram
                   </a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer" className="text-lime-500 dark:text-lime-500 hover:underline">
+                  <a href="https://www.linkedin.com/in/pavlo-lopatuk-580928250/" target="_blank" rel="noopener noreferrer" className="text-lime-500 dark:text-lime-500 hover:underline">
                     LinkedIn
                   </a>
                 </li>
