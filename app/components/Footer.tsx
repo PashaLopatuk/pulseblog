@@ -3,8 +3,8 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-black py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center md:flex-row md:justify-between">
+        <div className="mx-auto px-6 sm:px-10">
+          <div className="flex flex-col sm:flex-row items-start sm:justify-between">
             <div className="mb-6 md:w-1/2 md:mb-0">
               <h3 className="text-xl font-semibold mb-2">Email</h3>
               <a className="text-lime-500 dark:text-lime-500" href='mailto:pashalopatuk@gmail.com'>pashalopatuk@gmail.com</a>

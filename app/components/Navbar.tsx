@@ -5,9 +5,10 @@ import BurgerMenu from './BurgerMenu';
 
 const Navbar = () => {
     return (
-        <div className="
-        max-w-3xl mx-auto px-4 sm:px-6 lg:px-8
-        ">
+        <header className="">
+            <div className="
+                max-w-3xl mx-auto px-6 sm:px-6 lg:px-8
+                ">
             <div className="flex justify-between h-16">
                 <div className="flex justify-between items-center w-full">
                     <Link href="/">
@@ -22,13 +23,16 @@ const Navbar = () => {
                         <HeaderNavigation />
                     </div>
 
-                    <ThemeButton /> 
+                    <div className="flex space-x-3">
+                        <ThemeButton /> 
 
-                    <BurgerMenu />
+                        <BurgerMenu />
+                    </div>
 
                 </div>
             </div>
         </div>
+        </header>
     )
 }
 

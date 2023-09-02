@@ -26,10 +26,11 @@ export default function RootLayout({
           <Navbar /> 
           <main className='
           max-w-3xl mx-auto px-4
+          flex-1 flex-grow-1 flex-shrink-0 flex-basis-1
           '>
             {children}
           </main>
-        <Footer />
+          <Footer />
         </Providers>
         </body>
     </html>

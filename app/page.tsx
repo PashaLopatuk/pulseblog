@@ -8,10 +8,6 @@ async function getData() {
 
   const data = await client.fetch(query)
 
-  data.map( (e: {title: string}) => {
-    console.log(e.title)
-  })
-
   return data
 }
 
@@ -27,7 +23,7 @@ export default async function IndexPage() {
         </h1>
       </div>
 
-      <ul className="">
+      <ul className="space-y-4">
         {
         data.map( (post) => (
           <li className="" key={post._id}>

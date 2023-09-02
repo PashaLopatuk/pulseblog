@@ -8,7 +8,6 @@ const page = () => {
         <p className="mb-4">
           If you have any questions, feedback, or just want to say hello, feel free to reach out to me. I&apos;m always here to connect with my readers and fellow enthusiasts.
         </p>
-        
       </div>
     </section>
   )
