@@ -4,6 +4,8 @@ import { urlFor } from "@/app/lib/sanityImageUrl"
 import { PortableText } from "@portabletext/react"
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import Link from "next/link"
+import { HOME } from "@/app/tools/urls"
 
 const getData = async (slug : string) => {
     const query = `*[_type == "post" && slug.current == "${slug}"][0]`
@@ -33,13 +35,21 @@ const SlugPage = async ({
         }
     }
 
+    
+
     return (
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
             <header className="pt-6 xl:pb-6">
                 <div className="space-y-1 text-center">
                     <div className="space-y-10">
                         <div className="">
-                            <p className="text-base font-medium leading-6 text-lime-500">
+                            <Link href={HOME} className="text-black dark:bg-white relative -left-80 hover:text-lime-500 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+</svg>
+
+                            </Link>
+                            <p className="text-base font-medium leading-6 text-lime-500 ">
                                 {new Date(data._createdAt).toISOString().split('T')[0]}
                             </p>
                         </div>

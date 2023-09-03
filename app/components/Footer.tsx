@@ -22,7 +22,7 @@ const Footer = () => {
                     LinkedIn
                   </a>
                 </li>
-                {/* Add more social media links as needed */}
+                
               </ul>
             </div>
           </div>

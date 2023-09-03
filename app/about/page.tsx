@@ -27,6 +27,7 @@ const page = () => {
           <li>
             <strong className="text-lime-500 dark:text-lime-500">Personal Stories:</strong> I&apos;ll also share my personal experiences, anecdotes, and lessons learned along the way in the world of movies, games, and beyond.
           </li>
+          
         </ul>
       </section>
       <section>

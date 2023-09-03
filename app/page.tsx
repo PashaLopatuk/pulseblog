@@ -14,6 +14,8 @@ async function getData() {
 
 export default async function IndexPage() {
   const data = await getData() as Post[]
+
+  
   
   return (
     <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -25,7 +27,7 @@ export default async function IndexPage() {
 
       <ul className="space-y-4">
         {
-        data.map( (post) => (
+        data.reverse().map( (post) => (
           <li className="" key={post._id}>
             <article className="space-y-2 xl:grid-cols-4 xl:items-baseline xl:space-y-0">
               <div className="">
