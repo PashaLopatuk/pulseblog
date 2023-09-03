@@ -15,14 +15,14 @@ const BurgerMenu = () => {
   return (
     <>
       <button className='flex sm:hidden flex-col space-y-1 cursor' onClick={handleClick}>
-        <div className='bg-black w-7 h-1 rounded '></div>
-        <div className='bg-black w-7 h-1 rounded '></div>
-        <div className='bg-black w-7 h-1 rounded '></div>      
+        <div className='bg-black dark:bg-white w-7 h-1 rounded '></div>
+        <div className='bg-black dark:bg-white w-7 h-1 rounded '></div>
+        <div className='bg-black dark:bg-white w-7 h-1 rounded '></div>      
       </button>
 
       {
         isOpen ? (
-          <HeaderNavigation className='absolute left-0 top-16 bg-white pt-8 pb-[90vh] w-[100vw]'/>
+          <HeaderNavigation className='absolute left-0 top-16 bg-white dark:bg-black pt-8 pb-[90vh] w-[100vw]'/>
         ) : (
           <></>
         )

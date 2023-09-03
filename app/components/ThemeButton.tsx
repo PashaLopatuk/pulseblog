@@ -9,7 +9,17 @@ const ThemeButton = () => {
     
     useEffect( () => {
         setMounted(true)
+        const savedTheme = localStorage.getItem('theme')
+        if (savedTheme) {
+            setTheme(savedTheme)
+        }
     }, [])
+
+    useEffect( () => {
+        if (resolvedTheme) {
+            localStorage.setItem('theme', resolvedTheme)
+        }
+    }, [resolvedTheme])
 
     if (!mounted) {
         return null
