@@ -4,7 +4,7 @@ import { client } from "./lib/sanity"
 
 
 async function getData() {
-  const query = '*[_type == "post"]'
+  const query = '*[_type == "post"] | order(_createdAt)'
 
   const data = await client.fetch(query)
 
@@ -27,7 +27,7 @@ export default async function IndexPage() {
 
       <ul className="space-y-4">
         {
-        data.reverse().map( (post) => (
+        data.map( (post) => (
           <li className="" key={post._id}>
             <article className="space-y-2 xl:grid-cols-4 xl:items-baseline xl:space-y-0">
               <div className="">
