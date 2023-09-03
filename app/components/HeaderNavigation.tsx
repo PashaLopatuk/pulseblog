@@ -9,7 +9,7 @@ interface HeaderNavigationProps {
 const HeaderNavigation: React.FC<HeaderNavigationProps> = ({className}) => {
     return (
         <nav className={className}>
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-5">
                 <li className="list-none">
                     <Link href={HOME}>Home</Link>
                 </li>

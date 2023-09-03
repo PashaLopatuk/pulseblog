@@ -1,29 +1,25 @@
-import Link from "next/link"
-import { Post } from "./lib/interface"
-import { client } from "./lib/sanity"
-
+import React from 'react'
+import { Post } from '../lib/interface'
+import { client } from '../lib/sanity'
+import Link from 'next/link'
 
 async function getData() {
-  const query = '*[_type == "post"] | order(_createdAt)'
+    const query = '*[_type == "post"] | order(_createdAt)'
+  
+    const data = await client.fetch(query)
+  
+    return data
+  }
+  
 
-  const data = await client.fetch(query)
-
-  return data
-}
-
-
-export default async function IndexPage() {
+const page = async () => {
+  
   const data = await getData() as Post[]
 
   return (
-    <div className="divide-y divide-gray-200 dark:divide-gray-700">
-      <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-        <h1 className="text-3xl font-extraold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-          All Posts
-        </h1>
-      </div>
-
-      <ul className="space-y-4">
+    <div>
+        <div className="text-center black:text-white font-semibold text-2xl">Posts: </div>
+        <ul className="space-y-4">
         {
         data.map( (post) => (
           <li className="" key={post._id}>
@@ -52,4 +48,6 @@ export default async function IndexPage() {
       </ul>
     </div>
   )
-} 
+}
+
+export default page
